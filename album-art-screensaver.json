@@ -1,0 +1,11 @@
+{
+	"cover size":120,
+	"width":1920,
+	"height":1080,
+	"image directory":"~/.cache/lollypop/",
+	"keyword":"200",
+	"extensions":[
+		"jpg",
+		"png"
+	]
+}
