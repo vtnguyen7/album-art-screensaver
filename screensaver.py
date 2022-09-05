@@ -13,8 +13,7 @@ def get(js, value, default):
     except:
         return(default)
 
-
-def fetch_images(directory, filetypes, keyword):
+def fetch_images(directory, filetypes, keyword, exword):
 
     i = []
 
@@ -22,7 +21,7 @@ def fetch_images(directory, filetypes, keyword):
 
         ext = f.split(".")[-1]
         
-        if ext in filetypes and f.__contains__(keyword):
+        if ext in filetypes and f.__contains__(keyword) and not(f.__contains__(exword)):
 
             i.append(directory + f)
 
@@ -112,6 +111,7 @@ if __name__ == "__main__":
     h = get(sett, "height", 1080)
     directory = get(sett, "image directory", "~/.cache/lollypop/")
     keyword = get(sett, "keyword", "200")
+    exword = get(sett, "excluded word", "ROUNDED")
     exts = get(sett, "extensions", ["jpg", "png"])
 
     pygame.init()
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     pygame.mouse.set_visible(False)
     
     positions = make_positions(w, h, cover_size, cover_size)
-    imgs = fetch_images(directory, exts, keyword)
+    imgs = fetch_images(directory, exts, keyword, exword)
     [array, currently_used] = fetch_init(positions, imgs)
     tick_change = [0, 0]
 

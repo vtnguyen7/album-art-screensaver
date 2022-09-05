@@ -4,6 +4,7 @@
 	"height":1080,
 	"image directory":"~/.cache/lollypop/",
 	"keyword":"200",
+	"excluded word":"ROUNDED",
 	"extensions":[
 		"jpg",
 		"png"
